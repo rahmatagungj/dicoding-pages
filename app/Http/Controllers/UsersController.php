@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class UsersController extends Controller
 {
@@ -16,6 +17,10 @@ class UsersController extends Controller
     {
         $user = User::where('username', $username)->first();
 
+        if (!$user) return response()->json([
+            'error' => 'User not found',
+            'available_users' => User::all()->toJson()
+        ], 404);
 
         $DATA_COURSE = [
             [
@@ -63,7 +68,6 @@ class UsersController extends Controller
             ],
 
         ];
-
         return view('users.index', compact('DATA_COURSE', 'user', 'username'));
     }
 
@@ -76,6 +80,11 @@ class UsersController extends Controller
     {
 
         $user = User::where('username', $username)->first();
+
+        if (!$user) return response()->json([
+            'error' => 'User not found',
+            'available_users' => User::all()->toJson()
+        ], 404);
 
         $DATA_EVENT = [
             [
@@ -102,6 +111,11 @@ class UsersController extends Controller
     {
 
         $user = User::where('username', $username)->first();
+
+        if (!$user) return response()->json([
+            'error' => 'User not found',
+            'available_users' => User::all()->toJson()
+        ], 404);
 
         $DATA_CHALLENGE = [
             [

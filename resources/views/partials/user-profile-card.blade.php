@@ -26,7 +26,7 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00004 1.33334C4.31814 1.33334 1.33337 4.31811 1.33337 8.00001C1.33337 11.6819 4.31814 14.6667 8.00004 14.6667C11.6819 14.6667 14.6667 11.6819 14.6667 8.00001C14.6667 4.31811 11.6819 1.33334 8.00004 1.33334ZM2.66671 8.00001C2.66671 5.05449 5.05452 2.66668 8.00004 2.66668C10.9456 2.66668 13.3334 5.05449 13.3334 8.00001C13.3334 10.9455 10.9456 13.3333 8.00004 13.3333C5.05452 13.3333 2.66671 10.9455 2.66671 8.00001Z" fill="#A1A1AA" />
             </svg>
 
-            <label class="m-0" style="font-size: 14px;">Bergabung Sejak {{$user['join_year']}}</label>
+            <label class="m-0" style="font-size: 14px;">Bergabung Sejak {{\Carbon\Carbon::parse($user['created_at'])->format('Y')}}</label>
         </p>
         <p class="mt-2 d-flex flex-row align-items-center">
 
@@ -52,7 +52,6 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="validation-errors" id="validation-errors">,</div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col">
@@ -122,6 +121,11 @@
             const email = $('#email').val() || "{{$user['email']}}";
             const headline = $('#headline').val() || "{{$user['headline']}}";
             const bio = $('#bio').val() || "{{$user['bio']}}";
+
+            // check if data is modified
+            if (username == "{{$user['username']}}" && name == "{{$user['name']}}" && email == "{{$user['email']}}" && headline == "{{$user['headline']}}" && bio == "{{$user['bio']}}") {
+                return $('#modalProfile').modal('hide')
+            };
 
             $.ajax({
                 url: "{{route('users.update',$user['username'])}}",
