@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Users;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -12,19 +12,10 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($username)
     {
+        $user = User::where('username', $username)->first();
 
-        $user = [
-            'name' => 'Rahmat Agung Julians',
-            'headline' => 'Javascript Enjoyer',
-            'xp' => '800',
-            'join_year' => '2020',
-            'city' => 'Bandung',
-            'username'=>'rahmatagungj',
-            'email'=>'rahmatagungj@gmail.com',
-            'bio'=>'Hi im human',
-        ];
 
         $DATA_COURSE = [
             [
@@ -73,7 +64,7 @@ class UsersController extends Controller
 
         ];
 
-        return view('users.index', compact('DATA_COURSE', 'user'));
+        return view('users.index', compact('DATA_COURSE', 'user', 'username'));
     }
 
     /**
@@ -81,19 +72,10 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function event()
+    public function event($username)
     {
 
-        $user = [
-            'name' => 'Rahmat Agung Julians',
-            'headline' => 'Javascript Enjoyer',
-            'xp' => '800',
-            'join_year' => '2020',
-            'city' => 'Bandung',
-            'username'=>'rahmatagungj',
-            'email'=>'rahmatagungj@gmail.com',
-            'bio'=>'Hi im human',
-        ];
+        $user = User::where('username', $username)->first();
 
         $DATA_EVENT = [
             [
@@ -116,25 +98,16 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function challenge()
+    public function challenge($username)
     {
 
-        $user = [
-            'name' => 'Rahmat Agung Julians',
-            'headline' => 'Javascript Enjoyer',
-            'xp' => '800',
-            'join_year' => '2020',
-            'city' => 'Bandung',
-            'username'=>'rahmatagungj',
-            'email'=>'rahmatagungj@gmail.com',
-            'bio'=>'Hi im human',
-        ];
+        $user = User::where('username', $username)->first();
 
         $DATA_CHALLENGE = [
             [
                 'title' => '#MakanTanpaSisa Instagram AR Filter Competition',
                 'image' => 'chal1.png',
-                'provider'=>'Bank DBS Indonesia',
+                'provider' => 'Bank DBS Indonesia',
                 'kategory' => 'Seminar',
             ],
 
@@ -171,7 +144,7 @@ class UsersController extends Controller
      * @param  \App\Models\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function show(Users $users)
+    public function show(User $user)
     {
         //
     }
@@ -182,7 +155,7 @@ class UsersController extends Controller
      * @param  \App\Models\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function edit(Users $users)
+    public function edit(User $user)
     {
         //
     }
@@ -194,9 +167,22 @@ class UsersController extends Controller
      * @param  \App\Models\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Users $users)
+    public function update(Request $request, User $user, $username)
     {
-        //
+        // get the user
+        $user_table = User::where('username', $username)->first();
+        if (
+            $this->validate($request, [
+                // check if username is not same
+                'username' => 'alpha_num|min:4|max:10|unique:users,username,' . $user_table->id,
+                'email' => 'email|unique:users,email,' . $user_table->id,
+            ])
+        ) {
+            $user_table->update($request->all());
+            return response()->json($request->all(), 200);
+        } else {
+            return response()->json(['error' => 'Validation failed'], 400);
+        }
     }
 
     /**
@@ -205,7 +191,7 @@ class UsersController extends Controller
      * @param  \App\Models\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Users $users)
+    public function destroy(User $user)
     {
         //
     }

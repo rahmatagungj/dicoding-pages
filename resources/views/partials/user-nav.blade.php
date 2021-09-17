@@ -1,5 +1,5 @@
 <nav class="nav nav-pills">
-    <a class="nav-item cursor-pointer nav-link d-flex flex-row align-items-center mr-4 py-1 px-2 {{ Request::routeIs('users.index') ? 'active' : '' }}" href="{{route('users.index')}}">
+    <a class="nav-item cursor-pointer nav-link d-flex flex-row align-items-center mr-4 py-1 px-2 {{ Request::routeIs('users.index') ? 'active' : '' }}" href="{{route('users.index',$user['username'])}}">
         <label class="mb-0 cursor-pointer">
             Academy
         </label>
@@ -7,14 +7,14 @@
             6
         </label>
     </a>
-    <a class="nav-item cursor-pointer nav-link d-flex flex-row align-items-center mr-4 py-1 px-2 {{ Request::routeIs('users.event') ? 'active' : '' }}" href="{{route('users.event')}}">
+    <a class="nav-item cursor-pointer nav-link d-flex flex-row align-items-center mr-4 py-1 px-2 {{ Request::routeIs('users.event') ? 'active' : '' }}" href="{{route('users.event',$user['username'])}}">
         <label class="mb-0 cursor-pointer">
             Event
         </label>
         <label class="badge mb-0">
             2
         </label></a>
-    <a class="nav-item cursor-pointer nav-link d-flex flex-row align-items-center mr-4 py-1 px-2 {{ Request::routeIs('users.challenge') ? 'active' : '' }}" href="{{route('users.challenge')}}">
+    <a class="nav-item cursor-pointer nav-link d-flex flex-row align-items-center mr-4 py-1 px-2 {{ Request::routeIs('users.challenge') ? 'active' : '' }}" href="{{route('users.challenge',$user['username'])}}">
         <label class="mb-0 cursor-pointer">
             Challenge
         </label>

@@ -52,6 +52,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            <div class="validation-errors" id="validation-errors">,</div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col">
@@ -62,38 +63,90 @@
                             </div>
                             <div class="col">
                                 <button class="btn bg-gray-100 text-gray-700">Upload</button>
-                                <p class="text-gray-500 small mt-2">Gambar Profil Anda sebaiknya memiliki rasio 1:1<br/> dan berukuran tidak lebih dari 2MB.</p>
+                                <p class="text-gray-500 small mt-2">Gambar Profil Anda sebaiknya memiliki rasio 1:1<br /> dan berukuran tidak lebih dari 2MB.</p>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="name" class="control-label text-gray-700">Nama Lengkap</label>
                             <input type="text" class="form-control" id="name" placeholder="{{$user['name']}}" />
+                            <span class="text-danger error-text name_error"></span>
                         </div>
                         <div class="form-group">
                             <label for="username" class="control-label text-gray-700">Username</label>
                             <input type="text" class="form-control" id="username" placeholder="{{$user['username']}}" />
+                            <span class="text-danger error-text username_error"></span>
                         </div>
                         <div class="form-group">
                             <label for="email" class="control-label text-gray-700">Email</label>
                             <input type="text" class="form-control" id="email" placeholder="{{$user['email']}}" />
+                            <span class="text-danger error-text email_error"></span>
                         </div>
                         <div class="form-group">
                             <label for="headline" class="control-label text-gray-700">Headline</label>
                             <input type="text" class="form-control" id="headline" placeholder="{{$user['headline']}}" />
                             <p class="text-gray-500 small mt-1">Dapat diisi dengan titel atau jabatan utama Anda.</p>
+                            <span class="text-danger error-text headline_error"></span>
                         </div>
                         <div class="form-group">
                             <label for="bio" class="control-label text-gray-700">Tentang Saya</label>
                             <textarea class="form-control" id="bio" rows="3" placeholder="{{$user['bio']}}"></textarea>
                             <p class="text-gray-500 small mt-1">Tulis cerita singkat tentang diri Anda.</p>
+                            <span class="text-danger error-text bio_error"></span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-dark navy-500">Simpan</button>
+                <button type="button" class="btn btn-dark navy-500" id="profileModalSave">Simpan</button>
             </div>
         </div>
     </div>
 </div>
+
+
+<script>
+    $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': "{{csrf_token()}}"
+            }
+        });
+
+
+        $('#profileModalSave').on("click", function(e) {
+            e.preventDefault();
+
+            const username = $('#username').val() || "{{$user['username']}}";
+            const name = $('#name').val() || "{{$user['name']}}";
+            const email = $('#email').val() || "{{$user['email']}}";
+            const headline = $('#headline').val() || "{{$user['headline']}}";
+            const bio = $('#bio').val() || "{{$user['bio']}}";
+
+            $.ajax({
+                url: "{{route('users.update',$user['username'])}}",
+                type: "PUT",
+                dataType: "JSON",
+                data: {
+                    name: name,
+                    username: username,
+                    email: email,
+                    headline: headline,
+                    bio: bio
+                },
+                beforeSend: function() {
+                    $(document).find('span.error-text').text('');
+                },
+                success: function(data) {
+                    $('#modalProfile').modal('hide');
+                    window.location.href = `/users/` + data.username;
+                },
+                error: function(data) {
+                    $.each(data.responseJSON.errors, function(prefix, val) {
+                        $('span.' + prefix + '_error').text(val[0]);
+                    });
+                }
+            });
+        });
+    });
+</script>
