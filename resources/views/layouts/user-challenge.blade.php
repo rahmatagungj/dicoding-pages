@@ -1,6 +1,6 @@
 <div class="row">
     @foreach ($DATA_CHALLENGE as $challenge)
-    <div class="col-6">
+    <div class="col-12 col-md-6">
         <div class="card card-course">
             <div class="card-body p-3">
                 <div class="header">

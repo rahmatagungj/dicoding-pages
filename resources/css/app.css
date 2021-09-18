@@ -106,9 +106,9 @@ button.modal-profile:hover {
     line-height: 26px;
 }
 
-.learning,
+.learning label,
 .level,
-.rating {
+.rating{
     font-weight: 500;
     font-size: 12px;
     line-height: 20px;
@@ -139,6 +139,7 @@ button.modal-profile:hover {
         flex-wrap: nowrap;
         list-style: none;
         overflow-x: scroll;
+        margin-bottom: 2rem;
     }
 
     .inner-nav::-webkit-scrollbar-thumb {
@@ -151,6 +152,10 @@ button.modal-profile:hover {
     .inner-nav::-webkit-scrollbar {
         width: 3px;
         height: 3px;
+    }
+    .learning label,.level,.rating {
+        font-size: 10px;
+        line-height: 10px;
     }
 }
 

@@ -1,6 +1,6 @@
 <div class="row">
     @foreach ($DATA_COURSE as $course)
-    <div class="col-6">
+    <div class="col-12 col-md-6">
         <div class="card card-course">
             <div class="card-body p-3">
                 <div class="header d-flex flex-row">
@@ -10,9 +10,8 @@
                         {{$course['title']}}
                     </h6>
                 </div>
-                <div class="details border border-bottom-0 border-left-0 border-right-0 mt-3 d-flex flex-row align-items-center pt-2">
+                <div class="details border border-bottom-0 border-left-0 border-right-0 mt-3 d-flex flex-row flex-wrap align-items-center pt-2 justify-content-between justify-content-md-start">
                     <div class="learning d-flex flex-row align-items-center text-gray-700">
-
 
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2 text-gray-700">
                             <g id="clock">
@@ -21,9 +20,9 @@
                             </g>
                         </svg>
 
-                        {{$course['time_learn']}} Jam Belajar
+                        <label class="my-auto">{{$course['time_learn']}} Jam Belajar</label>
                     </div>
-                    <div class="rating ml-3 d-flex flex-row align-items-center text-gray-700">
+                    <div class="my-1 my-md-0 ml-md-3 rating d-flex flex-row align-items-center text-gray-700">
 
                         <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
                             <path d="M8.00002 12.172L3.29802 14.804L4.34802 9.5187L0.391357 5.86003L5.74269 5.22536L8.00002 0.332031L10.2574 5.22536L15.6087 5.86003L11.652 9.5187L12.702 14.804L8.00002 12.172Z" fill="#F59E0B" />
@@ -32,7 +31,7 @@
 
                         {{$course['rating']}}
                     </div>
-                    <div class="level ml-3 d-flex flex-row align-items-center text-gray-700">
+                    <div class="my-1 my-md-0 ml-md-3 level d-flex flex-row align-items-center text-gray-700">
 
 
                         <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">

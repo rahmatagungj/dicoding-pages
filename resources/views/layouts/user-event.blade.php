@@ -1,6 +1,6 @@
 <div class="row">
     @foreach ($DATA_EVENT as $event)
-    <div class="col-6">
+    <div class="col-12 col-md-6">
         <div class="card card-course">
             <div class="card-body p-3">
                 <div class="header d-flex flex-row">
@@ -12,7 +12,7 @@
                     <div class="px-2 py-0 text-yellow-500 rounded learning d-flex flex-row align-items-center border-yellow-500 border">
                         {{$event['kategory']}}
                     </div>
-                    
+
                 </div>
             </div>
         </div>
