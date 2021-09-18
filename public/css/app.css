@@ -173,6 +173,10 @@ button.modal-profile:hover {
         font-size: 12px;
         line-height: 19px;
     }
+    .footer-text {
+        font-size: 13px;
+        line-height: 19px;
+    }
 }
 
 @media screen and (min-width: 768px) {
