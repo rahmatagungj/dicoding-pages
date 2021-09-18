@@ -141,7 +141,7 @@ button.modal-profile:hover {
 
 @media screen and (max-width: 768px) {
     .float-top {
-        max-height: 21rem;
+        max-height: 20rem;
     }
 
     .inner-nav {
