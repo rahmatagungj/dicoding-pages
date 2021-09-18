@@ -9,7 +9,7 @@
 ⛔ is Not Implemented
 ❓ is Waiting for implementation
 
-### URL Pantern
+### URL Pattern
 
 #### GET
 
