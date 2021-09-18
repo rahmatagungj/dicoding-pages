@@ -2,12 +2,21 @@
 
 - Make design more awesome
 
-## Information
+## Deploy Example
 
-### Status 
-✅ is Done
-⛔ is Not Implemented
-❓ is Waiting for implementation
+I've published an example, you can visit it here:
+
+```
+http://rahmatagungjulians.works/users/rahmataj
+```
+
+or 
+
+```
+http://rahmatagungjulians.works/users/raj23
+```
+
+## Information
 
 ### URL Pattern
 
@@ -43,6 +52,11 @@
 
 
 ## Requirements
+
+### Status 
+✅ is Done
+⛔ is Not Implemented
+❓ is Waiting for implementation
 
 ### Functional Requirements
 - User email should be unique. ✅
