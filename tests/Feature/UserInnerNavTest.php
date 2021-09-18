@@ -16,7 +16,7 @@ class UserInnerNavTest extends TestCase
      {
          $user = User::Factory()->create();
          $response = $this->get('/users/'.$user->username);
-         $response->assertViewHas('Academy');
+         $response->assertSeeText('Academy');
          $response->assertSeeText('Event');
          $response->assertSeeText('Challenge');
          $response->assertSeeText('Winning App');
@@ -28,7 +28,7 @@ class UserInnerNavTest extends TestCase
      {
          $user = User::Factory()->create();
          $response = $this->get('/users/'.$user->username.'/event');
-         $response->assertViewHas('Academy');
+         $response->assertSeeText('Academy');
          $response->assertSeeText('Event');
          $response->assertSeeText('Challenge');
          $response->assertSeeText('Winning App');
@@ -40,7 +40,7 @@ class UserInnerNavTest extends TestCase
      {
          $user = User::Factory()->create();
          $response = $this->get('/users/'.$user->username.'/challenge');
-         $response->assertViewHas('Academy');
+         $response->assertSeeText('Academy');
          $response->assertSeeText('Event');
          $response->assertSeeText('Challenge');
          $response->assertSeeText('Winning App');
