@@ -1,6 +1,6 @@
 <footer>
     <div class="container py-4 border border-left-0 border-right-0 border-bottom-0">
-        <div class="row">
+        <div class="row mt-4 mb-3">
             <div class="col-md-12">
                 <img style="max-width: 138px;" class="mb-3" src="https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/commons/dicoding-logo-full.png" alt="Dicoding Indonesia">
                 <p style="max-width: 378px;" class="address text-gray-500">

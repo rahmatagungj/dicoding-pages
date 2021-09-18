@@ -4,7 +4,7 @@
         <div class="card card-course">
             <div class="card-body p-3">
                 <div class="header d-flex flex-row">
-                    <h6 class="title-event text-gray-700 font-weight-bold">
+                    <h6 class="title-event text-gray-700">
                         {{$event['title']}}
                     </h6>
                 </div>

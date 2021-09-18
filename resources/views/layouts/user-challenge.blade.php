@@ -6,7 +6,7 @@
                 <div class="header">
                     <img class="rounded" src="/images/{{$challenge['image']}}" alt="pemrograman c" class="rounded-circle">
 
-                    <h6 class="title-event text-gray-700 font-weight-bold mt-2">
+                    <h6 class="title-event text-gray-700 font-weight-bold mt-2 challenge-title">
                         {{$challenge['title']}}
                     </h6>
                     <p class="small mb-0">Diselenggarakan oleh: {{$challenge['provider']}}</p>
@@ -21,8 +21,8 @@
                 </div>
                 <div class="details border border-bottom-0 border-left-0 border-right-0 mt-1 d-flex flex-row align-items-center py-2  justify-content-end">
                     <div class="py-0 d-flex flex-row align-items-center cursor-pointer">
-                        <label class="text-blue-500 challenge-details cursor-pointer">Details</label>
-                        <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-blue-500 ml-2">
+                        <label class="text-blue-500 challenge-details cursor-pointer font-size-14">Details</label>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-blue-500 ml-2">
                             <path d="M7.66944 2.276L1.93144 8.014L0.98877 7.07133L6.7261 1.33333H1.66944V0H9.00277V7.33333H7.66944V2.276Z" fill="currentColor"/>
                         </svg>
 
