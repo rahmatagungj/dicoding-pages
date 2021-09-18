@@ -57,7 +57,7 @@
                 <div class="row">
                     <div class="col">
 
-                        <div class="row mb-5 justify-content-between justify-content-md-start">
+                        <div class="row mb-3 justify-content-between justify-content-md-start">
                             <div class="col-4 col-md-3 pr-0">
                                 <img class="modal-user-picture rounded" src="https://d17ivq9b7rppb3.cloudfront.net/small/avatar/202003182244424af48515d2ad646d30975e35dc5f982f.png" alt="Avatar" class="rounded-circle">
                             </div>
