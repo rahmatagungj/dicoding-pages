@@ -10,18 +10,20 @@ class UserBehaviorTest extends TestCase
 {
     use DatabaseTransactions;
 
-    /** @test */
-    public function a_user_cant_go_to_list_page()
-    {
-        $response = $this->get('/users/');
-        $response->assertNotFound();
-    }
-
+    
     /** @test */
     public function a_user_can_go_to_homepage()
     {
         $response = $this->get('/');
         $response->assertStatus(200);
+    }
+
+    /** @test */
+    public function a_user_can_go_to_user_list_page()
+    {
+        $response = $this->get('/users');
+        $response->assertStatus(200);
+        $response->assertJsonStructure();
     }
 
      /** @test */

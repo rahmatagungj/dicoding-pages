@@ -9,6 +9,39 @@
 ⛔ is Not Implemented
 ❓ is Waiting for implementation
 
+### URL Pantern
+
+#### GET
+
+1. List of all user
+```
+/users
+```
+
+2. User profile with academy
+```
+/users/{username}
+```
+
+3. User Profile with event 
+```
+/users/{username}/event
+```
+
+4. User Profile with challenge 
+
+```
+/users/{username}/challenge
+```
+
+#### PUT
+
+1. Update user profile with rules
+```
+/users/{username}
+```
+
+
 ## Requirements
 
 ### Functional Requirements

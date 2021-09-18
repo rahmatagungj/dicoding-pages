@@ -13,62 +13,11 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($username)
+    public function index()
     {
-        $user = User::where('username', $username)->first();
-
-        if (!$user) return response()->json([
-            'error' => 'User not found',
+        return response()->json([
             'available_users' => User::all()->toJson()
-        ], 404);
-
-        $DATA_COURSE = [
-            [
-                'title' => 'Memulai Pemrograman Dengan C',
-                'image' => 'Memulai Pemrograman Dengan C.png',
-                'time_learn' => '15',
-                'rating' => '4.98',
-                'level' => 'Dasar',
-            ],
-            [
-                'title' => 'Memulai Pemrograman Dengan Java',
-                'image' => 'Memulai Pemrograman Dengan Java.png',
-                'time_learn' => '15',
-                'rating' => '4.97',
-                'level' => 'Dasar',
-            ],
-            [
-                'title' => 'Belajar Dasar Pemrograman Web',
-                'image' => 'Belajar Prinsip Pemrograman SOLID.png',
-                'time_learn' => '45',
-                'rating' => '4.95',
-                'level' => 'Pemula',
-            ],
-            [
-                'title' => 'Belajar Membuat Front-End Web untuk Pemula
-                ',
-                'image' => 'image 14.png',
-                'time_learn' => '40',
-                'rating' => '4.95',
-                'level' => 'Pemula',
-            ],
-            [
-                'title' => 'Belajar Fundamental Front-End Web Development',
-                'image' => 'image 15.png',
-                'time_learn' => '70',
-                'rating' => '4.98',
-                'level' => 'Menengah',
-            ],
-            [
-                'title' => 'Menjadi Front-End Web Developer Expert',
-                'image' => 'image 16.png',
-                'time_learn' => '90',
-                'rating' => '4.98',
-                'level' => 'Mahir',
-            ],
-
-        ];
-        return view('users.index', compact('DATA_COURSE', 'user', 'username'));
+        ], 200);
     }
 
     /**
@@ -158,9 +107,62 @@ class UsersController extends Controller
      * @param  \App\Models\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(User $user, $username)
     {
-        //
+        $user = User::where('username', $username)->first();
+
+        if (!$user) return response()->json([
+            'error' => 'User not found',
+            'available_users' => User::all()->toJson()
+        ], 404);
+
+        $DATA_COURSE = [
+            [
+                'title' => 'Memulai Pemrograman Dengan C',
+                'image' => 'Memulai Pemrograman Dengan C.png',
+                'time_learn' => '15',
+                'rating' => '4.98',
+                'level' => 'Dasar',
+            ],
+            [
+                'title' => 'Memulai Pemrograman Dengan Java',
+                'image' => 'Memulai Pemrograman Dengan Java.png',
+                'time_learn' => '15',
+                'rating' => '4.97',
+                'level' => 'Dasar',
+            ],
+            [
+                'title' => 'Belajar Dasar Pemrograman Web',
+                'image' => 'Belajar Prinsip Pemrograman SOLID.png',
+                'time_learn' => '45',
+                'rating' => '4.95',
+                'level' => 'Pemula',
+            ],
+            [
+                'title' => 'Belajar Membuat Front-End Web untuk Pemula
+                ',
+                'image' => 'image 14.png',
+                'time_learn' => '40',
+                'rating' => '4.95',
+                'level' => 'Pemula',
+            ],
+            [
+                'title' => 'Belajar Fundamental Front-End Web Development',
+                'image' => 'image 15.png',
+                'time_learn' => '70',
+                'rating' => '4.98',
+                'level' => 'Menengah',
+            ],
+            [
+                'title' => 'Menjadi Front-End Web Developer Expert',
+                'image' => 'image 16.png',
+                'time_learn' => '90',
+                'rating' => '4.98',
+                'level' => 'Mahir',
+            ],
+
+        ];
+        return view('users.index', compact('DATA_COURSE', 'user', 'username'));
     }
 
     /**
