@@ -1,7 +1,9 @@
 <div class="card p-4 card-user">
     <div class="card-body pt-0 p-md-3">
         <div class="user d-flex flex-column justify-content-center mx-auto align-items-center">
-            <img class="card-user-picture rounded-circle" src="https://d17ivq9b7rppb3.cloudfront.net/small/avatar/202003182244424af48515d2ad646d30975e35dc5f982f.png" alt="Avatar" class="rounded-circle">
+            <div class="card-user-outer rounded-circle d-flex flex-row align-items-center justify-content-center">
+                <img class="card-user-picture rounded-circle" src="https://d17ivq9b7rppb3.cloudfront.net/small/avatar/202003182244424af48515d2ad646d30975e35dc5f982f.png" alt="Avatar" class="rounded-circle">
+            </div>
             <h5 class="mt-3 text-center">{{$user['name']}}</h5>
             <p class="mt-2">{{$user['headline']}}</p>
             <button class="mt-0 mt-md-2 btn border px-3 modal-profile" data-toggle="modal" data-target="#modalProfile">Edit Profile</button>
