@@ -106,6 +106,18 @@
 
 <script>
     $(document).ready(function() {
+
+        const setButtonState = (state = 'normal') => {
+            if (state == 'loading') {
+                $('#profileModalSave').attr('disabled', true);
+                $('#profileModalSave').addClass('disabled');
+            } else {
+                $('#profileModalSave').attr('disabled', false);
+                $('#profileModalSave').removeClass('disabled');
+            }
+
+        };
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': "{{csrf_token()}}"
@@ -139,13 +151,16 @@
                     bio: bio
                 },
                 beforeSend: function() {
+                    setButtonState('loading');
                     $(document).find('span.error-text').text('');
                 },
                 success: function(data) {
+                    setButtonState('normal');
                     $('#modalProfile').modal('hide');
                     window.location.href = `/users/` + data.username;
                 },
                 error: function(data) {
+                    setButtonState('normal');
                     $.each(data.responseJSON.errors, function(prefix, val) {
                         $('span.' + prefix + '_error').text(val[0]);
                     });

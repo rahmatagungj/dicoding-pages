@@ -1,5 +1,5 @@
 <nav class="nav nav-pills">
-    <a class="nav-item cursor-pointer nav-link d-flex flex-row align-items-center mr-4 py-1 px-2 {{ Request::routeIs('users.index') ? 'active' : '' }}" href="{{route('users.index',$user['username'])}}">
+    <a class="nav-item cursor-pointer nav-link d-flex flex-row align-items-center mr-4 py-1 px-2 {{ Request::routeIs('users.show') ? 'active' : '' }}" href="{{route('users.show',$user['username'])}}">
         <label class="mb-0 cursor-pointer">
             Academy
         </label>
