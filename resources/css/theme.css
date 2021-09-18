@@ -29,3 +29,26 @@
 .font-size-14 {
     font-size: 14px;
 }
+
+.font-size-12 {
+    font-size: 12px;
+}
+
+.text-gray-400 {
+    color: #a1a1aa;
+}
+
+.text-gray-400::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #a1a1aa;
+}
+
+.text-gray-400:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #a1a1aa;
+}
+
+.text-gray-400::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #a1a1aa;
+}
