@@ -1,6 +1,6 @@
-# TODO 
+# Dicoding Profile Page 
 
-- Make design more awesome
+This project is used as a requirement for Dicoding Product Engineer Technical Exercise.
 
 ## Deploy Example
 
@@ -43,7 +43,7 @@ http://rahmatagungjulians.works/users/raj23
 /users/{username}/challenge
 ```
 
-#### PUT
+#### POST
 
 1. Update user profile with rules
 ```
