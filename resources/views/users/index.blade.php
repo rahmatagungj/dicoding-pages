@@ -7,12 +7,12 @@
 <main class="container">
     <div class="row p-3">
 
-        <div class="col-4">
+        <div class="col-12 col-md-4 float-top">
             @include('partials.user-profile-card',[$user])
         </div>
 
 
-        <div class="col">
+        <div class="col-12 col-md-8">
             @include('partials.user-nav')
 
             <div class="content my-4">
