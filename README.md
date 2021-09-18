@@ -7,13 +7,13 @@ This project is used as a requirement for Dicoding Product Engineer Technical Ex
 I've published an example, you can visit it here:
 
 ```
-http://rahmatagungjulians.works/users/rahmataj
+https://rahmatagungjulians.works/users/rahmataj
 ```
 
 or 
 
 ```
-http://rahmatagungjulians.works/users/raj23
+https://rahmatagungjulians.works/users/raj23
 ```
 
 ## Information
