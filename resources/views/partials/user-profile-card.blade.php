@@ -4,7 +4,7 @@
             <img class="card-user-picture rounded-circle" src="https://d17ivq9b7rppb3.cloudfront.net/small/avatar/202003182244424af48515d2ad646d30975e35dc5f982f.png" alt="Avatar" class="rounded-circle">
             <h5 class="mt-3">{{$user['name']}}</h5>
             <p class="mt-2">{{$user['headline']}}</p>
-            <button class="mt-2 btn border " data-toggle="modal" data-target="#modalProfile">Edit Profile</button>
+            <button class="mt-2 btn border px-3 modal-profile" data-toggle="modal" data-target="#modalProfile">Edit Profile</button>
         </div>
     </div>
     <div class="bio mt-1">
@@ -34,7 +34,6 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6381 3.02865C9.44477 0.8353 5.88865 0.8353 3.6953 3.02865C1.50196 5.22199 1.50196 8.77811 3.6953 10.9715L7.1953 14.4715C7.32033 14.5965 7.4899 14.6667 7.66671 14.6667C7.84352 14.6667 8.01309 14.5965 8.13811 14.4715L11.6381 10.9715C13.8315 8.77811 13.8315 5.22199 11.6381 3.02865ZM4.63811 3.97146C6.31076 2.29881 9.02266 2.29881 10.6953 3.97145C12.3679 5.6441 12.3679 8.356 10.6953 10.0286L7.66671 13.0572L4.63811 10.0286C2.96546 8.356 2.96546 5.6441 4.63811 3.97146Z" fill="#A1A1AA" />
                 <ellipse cx="7.66667" cy="7.00001" rx="1.66667" ry="1.66667" fill="#A1A1AA" />
             </svg>
-
 
             <label class="m-0" style="font-size: 14px;">Kota {{$user['city']}}</label>
         </p>
@@ -69,29 +68,29 @@
                         <div class="form-group">
                             <label for="name" class="control-label text-gray-700">Nama Lengkap</label>
                             <input type="text" class="form-control" id="name" placeholder="{{$user['name']}}" />
-                            <span class="text-danger error-text name_error"></span>
+                            <span class="small mt-2 text-danger error-text name_error"></span>
                         </div>
                         <div class="form-group">
                             <label for="username" class="control-label text-gray-700">Username</label>
                             <input type="text" class="form-control" id="username" placeholder="{{$user['username']}}" />
-                            <span class="text-danger error-text username_error"></span>
+                            <span class="small mt-2 text-danger error-text username_error"></span>
                         </div>
                         <div class="form-group">
                             <label for="email" class="control-label text-gray-700">Email</label>
                             <input type="text" class="form-control" id="email" placeholder="{{$user['email']}}" />
-                            <span class="text-danger error-text email_error"></span>
+                            <span class="small mt-2 text-danger error-text email_error"></span>
                         </div>
                         <div class="form-group">
                             <label for="headline" class="control-label text-gray-700">Headline</label>
                             <input type="text" class="form-control" id="headline" placeholder="{{$user['headline']}}" />
                             <p class="text-gray-500 small mt-1">Dapat diisi dengan titel atau jabatan utama Anda.</p>
-                            <span class="text-danger error-text headline_error"></span>
+                            <span class="small mt-2 text-danger error-text headline_error"></span>
                         </div>
                         <div class="form-group">
                             <label for="bio" class="control-label text-gray-700">Tentang Saya</label>
                             <textarea class="form-control" id="bio" rows="3" placeholder="{{$user['bio']}}"></textarea>
                             <p class="text-gray-500 small mt-1">Tulis cerita singkat tentang diri Anda.</p>
-                            <span class="text-danger error-text bio_error"></span>
+                            <span class="small mt-2 text-danger error-text bio_error"></span>
                         </div>
                     </div>
                 </div>

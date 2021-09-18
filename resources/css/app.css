@@ -40,7 +40,6 @@ main {
 .navbar-nav a {
     font-family: Inter, "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
         "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 22px;
@@ -57,6 +56,14 @@ a.nav-item.nav-link.active {
     background: #f4f4f5;
     color: #3f3f46;
     border-radius: 2px;
+}
+
+a.nav-item.nav-link:hover {
+    box-shadow:0px 0px 0px 2px #dadada inset;
+}
+
+button.modal-profile:hover {
+    background: #f0f0f0;
 }
 
 .badge {
