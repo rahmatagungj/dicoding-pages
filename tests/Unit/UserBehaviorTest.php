@@ -16,18 +16,18 @@ class UserBehaviorTest extends TestCase
     public function a_user_can_update_own_data()
     {
         $user = User::Factory()->create();
-        $response = $this->put(route('users.update', $user->username), [
+        $response = $this->post(route('users.update', $user->username), [
             'name' => 'Rahmat Agung Julians',
-            'username' => 'rahmataj',
+            'username' => 'raj123',
             'bio' => $user->bio,
-            'email' => 'rahmatagungj@gmail.com',
+            'email' => 'rahmatagungj23@gmail.com',
         ]);
         $response->assertStatus(200);
         $this->assertDatabaseHas('users', [
             'name' => 'Rahmat Agung Julians',
-            'username' => 'rahmataj',
+            'username' => 'raj123',
             'bio' => $user->bio,
-            'email' => 'rahmatagungj@gmail.com',
+            'email' => 'rahmatagungj23@gmail.com',
         ]);
     }
 
@@ -35,7 +35,7 @@ class UserBehaviorTest extends TestCase
     public function a_user_cant_update_own_data_because_invalid_username()
     {
         $user = User::Factory()->create();
-        $response = $this->put(route('users.update', $user->username), [
+        $response = $this->post(route('users.update', $user->username), [
             'name' => 'Rahmat Agung Julians',
             'username' => '_1nval1du3ern4m3',
             'bio' => $user->bio,
@@ -54,7 +54,7 @@ class UserBehaviorTest extends TestCase
     public function a_user_cant_update_own_data_because_invalid_email()
     {
         $user = User::Factory()->create();
-        $response = $this->put(route('users.update', $user->username), [
+        $response = $this->post(route('users.update', $user->username), [
             'name' => 'Rahmat Agung Julians',
             'username' => $user->username,
             'bio' => $user->bio,

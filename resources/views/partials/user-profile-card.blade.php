@@ -140,7 +140,7 @@
 
             $.ajax({
                 url: "{{route('users.update',$user['username'])}}",
-                type: "PUT",
+                type: "POST",
                 dataType: "JSON",
                 data: {
                     name: name,

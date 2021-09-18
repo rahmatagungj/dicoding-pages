@@ -25,6 +25,6 @@ Route::group(['prefix' => 'users'], function () {
     Route::get('/{username}', [UsersController::class, 'show'])->name('users.show');
     Route::get('/{username}/event', [UsersController::class, 'event'])->name('users.event');
     Route::get('/{username}/challenge', [UsersController::class, 'challenge'])->name('users.challenge');
-    Route::put('/{username}', [UsersController::class, 'update'])->name('users.update');
+    Route::post('/{username}', [UsersController::class, 'update'])->name('users.update');
 
 });
