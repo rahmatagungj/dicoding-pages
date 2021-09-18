@@ -1,14 +1,14 @@
 <div class="card p-4 card-user">
-    <div class="card-body">
+    <div class="card-body pt-0 p-md-3">
         <div class="user d-flex flex-column justify-content-center mx-auto align-items-center">
             <img class="card-user-picture rounded-circle" src="https://d17ivq9b7rppb3.cloudfront.net/small/avatar/202003182244424af48515d2ad646d30975e35dc5f982f.png" alt="Avatar" class="rounded-circle">
             <h5 class="mt-3 text-center">{{$user['name']}}</h5>
             <p class="mt-2">{{$user['headline']}}</p>
-            <button class="mt-2 btn border px-3 modal-profile" data-toggle="modal" data-target="#modalProfile">Edit Profile</button>
+            <button class="mt-0 mt-md-2 btn border px-3 modal-profile" data-toggle="modal" data-target="#modalProfile">Edit Profile</button>
         </div>
     </div>
     <div class="bio mt-1">
-        <p class="mt-2 d-flex flex-row align-items-center">
+        <p class="mt-0 mt-md-2 d-flex flex-row align-items-center">
 
             <svg class="mr-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99996 4.66666C5.05444 4.66666 2.66663 7.05447 2.66663 9.99999C2.66663 12.9455 5.05444 15.3333 7.99996 15.3333C10.9455 15.3333 13.3333 12.9455 13.3333 9.99999C13.3333 7.05447 10.9455 4.66666 7.99996 4.66666ZM3.99996 9.99999C3.99996 7.79085 5.79082 5.99999 7.99996 5.99999C10.2091 5.99999 12 7.79085 12 9.99999C12 12.2091 10.2091 14 7.99996 14C5.79082 14 3.99996 12.2091 3.99996 9.99999Z" fill="#A1A1AA" />
@@ -19,7 +19,7 @@
 
             <label class="m-0" style="font-size: 14px;">{{$user['xp']}} XP</label>
         </p>
-        <p class="mt-2 d-flex flex-row align-items-center">
+        <p class="mt-0 mt-md-2 d-flex flex-row align-items-center">
 
             <svg class="mr-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.66671 4.66668C8.66671 4.29849 8.36823 4.00001 8.00004 4.00001C7.63185 4.00001 7.33337 4.29849 7.33337 4.66668V8.00001C7.33337 8.17682 7.40361 8.34639 7.52864 8.47141L9.86197 10.8047C10.1223 11.0651 10.5444 11.0651 10.8048 10.8047C11.0651 10.5444 11.0651 10.1223 10.8048 9.86194L8.66671 7.72387V4.66668Z" fill="#A1A1AA" />
@@ -28,7 +28,7 @@
 
             <label class="m-0" style="font-size: 14px;">Bergabung Sejak {{\Carbon\Carbon::parse($user['created_at'])->format('Y')}}</label>
         </p>
-        <p class="mt-2 d-flex flex-row align-items-center">
+        <p class="mb-0 mt-md-2 d-flex flex-row align-items-center">
 
             <svg class="mr-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6381 3.02865C9.44477 0.8353 5.88865 0.8353 3.6953 3.02865C1.50196 5.22199 1.50196 8.77811 3.6953 10.9715L7.1953 14.4715C7.32033 14.5965 7.4899 14.6667 7.66671 14.6667C7.84352 14.6667 8.01309 14.5965 8.13811 14.4715L11.6381 10.9715C13.8315 8.77811 13.8315 5.22199 11.6381 3.02865ZM4.63811 3.97146C6.31076 2.29881 9.02266 2.29881 10.6953 3.97145C12.3679 5.6441 12.3679 8.356 10.6953 10.0286L7.66671 13.0572L4.63811 10.0286C2.96546 8.356 2.96546 5.6441 4.63811 3.97146Z" fill="#A1A1AA" />

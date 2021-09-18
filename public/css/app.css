@@ -104,7 +104,7 @@ button.modal-profile:hover {
 }
 
 .address {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 26px;
 }
 
@@ -132,6 +132,11 @@ button.modal-profile:hover {
 .details {
     font-size: 14px;
     line-height: 21px;
+}
+
+.footer-text {
+    font-size: 14px;
+    line-height: 19px;
 }
 
 @media screen and (max-width: 768px) {
