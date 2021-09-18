@@ -66,31 +66,41 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="name" class="control-label text-gray-700">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="name" placeholder="{{$user['name']}}" />
-                            <span class="small mt-2 text-danger error-text name_error"></span>
+                            <label for="name" class="control-label text-gray-700 font-size-14">Nama Lengkap</label>
+                            <input type="text" class="form-control text-gray-400" id="name" placeholder="{{$user['name']}}" />
+                            <span class="small text-size-12 mt-2 text-danger error-text name_error"></span>
                         </div>
                         <div class="form-group">
-                            <label for="username" class="control-label text-gray-700">Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="{{$user['username']}}" />
-                            <span class="small mt-2 text-danger error-text username_error"></span>
+                            <label for="username" class="control-label text-gray-700 font-size-14">Username</label>
+                            <input type="text" class="form-control text-gray-400" id="username" placeholder="{{$user['username']}}" />
+                            <span class="small text-size-12 mt-2 text-danger error-text username_error"></span>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="control-label text-gray-700">Email</label>
-                            <input type="text" class="form-control" id="email" placeholder="{{$user['email']}}" />
-                            <span class="small mt-2 text-danger error-text email_error"></span>
+                            <label for="email" class="control-label text-gray-700 font-size-14">Email</label>
+                            <input type="text" class="form-control text-gray-400" id="email" placeholder="{{$user['email']}}" />
+                            <span class="small text-size-12 mt-2 text-danger error-text email_error"></span>
                         </div>
                         <div class="form-group">
-                            <label for="headline" class="control-label text-gray-700">Headline</label>
-                            <input type="text" class="form-control" id="headline" placeholder="{{$user['headline']}}" />
-                            <p class="text-gray-500 small mt-1">Dapat diisi dengan titel atau jabatan utama Anda.</p>
-                            <span class="small mt-2 text-danger error-text headline_error"></span>
+                            <label for="headline" class="control-label text-gray-700 font-size-14">Headline</label>
+                            <input type="text" class="form-control text-gray-400" id="headline" placeholder="{{$user['headline']}}" />
+                            <p class="text-gray-500 small mt-1 text-size-12">Dapat diisi dengan titel atau jabatan utama Anda.</p>
+                            <span class="small text-size-12 mt-2 text-danger error-text headline_error"></span>
                         </div>
                         <div class="form-group">
-                            <label for="bio" class="control-label text-gray-700">Tentang Saya</label>
-                            <textarea class="form-control" id="bio" rows="3" placeholder="{{$user['bio']}}"></textarea>
-                            <p class="text-gray-500 small mt-1">Tulis cerita singkat tentang diri Anda.</p>
-                            <span class="small mt-2 text-danger error-text bio_error"></span>
+                            <div class="title d-flex flex-row items-center justify-content-between">
+                                <label for="bio" class="control-label text-gray-700 font-size-14">Tentang Saya</label>
+                                <div class="text-gray-700 font-size-14 d-flex flex-row items-center">
+                                    <p id="count" class="mr-2">0/100</p>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 9C8 8.44771 8.44771 8 9 8H10C10.5523 8 11 8.44771 11 9V13C11.5523 13 12 13.4477 12 14C12 14.5523 11.5523 15 11 15H10C9.44771 15 9 14.5523 9 14V10C8.44771 10 8 9.55229 8 9Z" fill="#3F3F46" />
+                                        <path d="M10 7C10.5523 7 11 6.55229 11 6C11 5.44772 10.5523 5 10 5C9.44771 5 9 5.44772 9 6C9 6.55229 9.44771 7 10 7Z" fill="#3F3F46" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10ZM10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2Z" fill="#3F3F46" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <textarea class="form-control text-gray-400" maxlength='100' id="bio" rows="3" placeholder="{{$user['bio']}}"></textarea>
+                            <p class="text-gray-500 small mt-1 text-size-12">Tulis cerita singkat tentang diri Anda.</p>
+                            <span class="small text-size-12 mt-2 text-danger error-text bio_error"></span>
                         </div>
                     </div>
                 </div>
@@ -105,6 +115,12 @@
 
 <script>
     $(document).ready(function() {
+
+        $('#modalProfile').on('show.bs.modal', function(e) {
+            $("#bio").keyup(function() {
+                $("#count").text(($(this).val().length) + "/100");
+            });
+        });
 
         const setButtonState = (state = 'normal') => {
             if (state == 'loading') {
