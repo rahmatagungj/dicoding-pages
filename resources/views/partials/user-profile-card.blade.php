@@ -55,13 +55,13 @@
                 <div class="row">
                     <div class="col">
 
-                        <div class="row mb-4">
-                            <div class="col-3">
+                        <div class="row mb-5 justify-content-between justify-content-md-start">
+                            <div class="col-4 col-md-3 pr-0">
                                 <img class="modal-user-picture rounded" src="https://d17ivq9b7rppb3.cloudfront.net/small/avatar/202003182244424af48515d2ad646d30975e35dc5f982f.png" alt="Avatar" class="rounded-circle">
                             </div>
                             <div class="col">
                                 <button class="btn bg-gray-100 text-gray-700">Upload</button>
-                                <p class="text-gray-500 small mt-2">Gambar Profil Anda sebaiknya memiliki rasio 1:1<br /> dan berukuran tidak lebih dari 2MB.</p>
+                                <p class="text-gray-500 small mt-2 word">Gambar Profil Anda sebaiknya memiliki rasio 1:1<br /> dan berukuran tidak lebih dari 2MB.</p>
                             </div>
                         </div>
 
