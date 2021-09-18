@@ -10,7 +10,7 @@
                         {{$course['title']}}
                     </h6>
                 </div>
-                <div class="details border border-bottom-0 border-left-0 border-right-0 mt-3 d-flex flex-row align-items-center py-2">
+                <div class="details border border-bottom-0 border-left-0 border-right-0 mt-3 d-flex flex-row align-items-center pt-2">
                     <div class="learning d-flex flex-row align-items-center text-gray-700">
 
 
