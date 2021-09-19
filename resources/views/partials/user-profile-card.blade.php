@@ -193,7 +193,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-dark navy-500" id="profileModalSave">Simpan</button>
+                <button type="button" class="btn btn-dark navy-500 d-flex align-items-center" id="profileModalSave">Simpan</button>
             </div>
         </div>
     </div>
@@ -214,6 +214,7 @@
             if (state == 'loading') {
                 $('#profileModalSave').attr('disabled', true);
                 $('#profileModalSave').addClass('disabled');
+                $('#profileModalSave').html('<span class="spinner-border spinner-border-sm mr-1" role="status" aria-hidden="true"></span> Simpan');
             } else {
                 $('#profileModalSave').attr('disabled', false);
                 $('#profileModalSave').removeClass('disabled');
