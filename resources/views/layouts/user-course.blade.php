@@ -13,7 +13,7 @@
                 <div class="details border border-bottom-0 border-left-0 border-right-0 mt-3 d-flex flex-row flex-wrap align-items-center pt-2 justify-content-between justify-content-md-start">
                     <div class="learning d-flex flex-row align-items-center text-gray-700">
 
-                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2 text-gray-700">
+                        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2 text-gray-700">
                             <g id="clock">
                                 <path id="Vector" d="M8.00004 14.6654C11.6819 14.6654 14.6667 11.6806 14.6667 7.9987C14.6667 4.3168 11.6819 1.33203 8.00004 1.33203C4.31814 1.33203 1.33337 4.3168 1.33337 7.9987C1.33337 11.6806 4.31814 14.6654 8.00004 14.6654Z" stroke="#3F3F46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 <path id="Vector_2" d="M8 4V8L10.6667 9.33333" stroke="#3F3F46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
