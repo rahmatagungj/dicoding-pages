@@ -1,7 +1,7 @@
 <div class="card p-4 card-user">
     <div class="card-body pt-0 p-md-3">
         <div class="user d-flex flex-column justify-content-center mx-auto align-items-center">
-            <div class="card-user-outer rounded-circle d-flex flex-row align-items-center justify-content-center">
+            <div class="card-user-outer rounded-circle d-flex flex-row align-items-center justify-content-center border-color" id="{{$user['profileColor']}}">
                 <img class="card-user-picture rounded-circle" src="https://d17ivq9b7rppb3.cloudfront.net/small/avatar/202003182244424af48515d2ad646d30975e35dc5f982f.png" alt="Avatar" class="rounded-circle">
             </div>
             <h5 class="mt-3 text-center">{{$user['name']}}</h5>
@@ -68,6 +68,38 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="color" class="control-label text-gray-700 font-size-14">Warna Profil</label>
+                            <div class="profile-color">
+                                <div>
+                                    <input type="radio" id="color-1" name="color" value="#f1c40f" {{ $user['profileColor'] == '#f1c40f' ? 'checked' : ''}}>
+                                    <label for="color-1">
+                                        <span>
+                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <input type="radio" id="color-2" name="color" value="#e74c3c" {{ $user['profileColor'] == '#e74c3c' ? 'checked' : ''}}>
+                                    <label for="color-2">
+                                        <span>
+                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <input type="radio" id="color-3" name="color" value="#0c9bab" {{ $user['profileColor'] == '#0c9bab' ? 'checked' : ''}}>
+                                    <label for="color-3">
+                                        <span>
+                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label for="name" class="control-label text-gray-700 font-size-14">Nama Lengkap</label>
                             <input type="text" class="form-control text-gray-400" id="name" placeholder="{{$user['name']}}" />
                             <span class="small text-size-12 mt-2 text-danger error-text name_error"></span>
@@ -118,6 +150,7 @@
 <script>
     $(document).ready(function() {
 
+
         $('#modalProfile').on('show.bs.modal', function(e) {
             $("#bio").keyup(function() {
                 $("#count").text(($(this).val().length) + "/100");
@@ -144,7 +177,7 @@
 
         $('#profileModalSave').on("click", function(e) {
             e.preventDefault();
-
+            const profileColor = $('input[name=color]:checked').val();
             const username = $('#username').val() || "{{$user['username']}}";
             const name = $('#name').val() || "{{$user['name']}}";
             const email = $('#email').val() || "{{$user['email']}}";
@@ -152,7 +185,7 @@
             const bio = $('#bio').val() || "{{$user['bio']}}";
 
             // check if data is modified
-            if (username == "{{$user['username']}}" && name == "{{$user['name']}}" && email == "{{$user['email']}}" && headline == "{{$user['headline']}}" && bio == "{{$user['bio']}}") {
+            if (username == "{{$user['username']}}" && name == "{{$user['name']}}" && email == "{{$user['email']}}" && headline == "{{$user['headline']}}" && bio == "{{$user['bio']}}" && profileColor == "{{$user['profileColor']}}") {
                 return $('#modalProfile').modal('hide')
             };
 
@@ -161,6 +194,7 @@
                 type: "POST",
                 dataType: "JSON",
                 data: {
+                    profileColor: profileColor,
                     name: name,
                     username: username,
                     email: email,

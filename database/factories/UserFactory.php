@@ -30,6 +30,7 @@ class UserFactory extends Factory
             'headline' => $this->faker->sentence(3),
             'bio' => $this->faker->paragraph(3),
             'city' => $this->faker->city(),
+            'profileColor' => '#0c9bab',
             'last_used_at' => $this->faker->dateTimeBetween('-1 years', 'now'),
             'remember_token' => Str::random(10),
         ];

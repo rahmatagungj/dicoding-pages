@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->text('headline')->nullable();
             $table->text('bio')->nullable();
             $table->string('city')->nullable();
+            $table->string('profileColor')->default('#0c9bab');
             $table->rememberToken();
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
