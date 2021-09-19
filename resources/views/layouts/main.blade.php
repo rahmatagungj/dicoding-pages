@@ -33,7 +33,7 @@
 <script type="text/javascript">
     const observer = lozad('.lozad', {
         rootMargin: '0px 0px', 
-        threshold: 0.7, 
+        threshold: 0.1, 
         enableAutoReload: true
     });
 

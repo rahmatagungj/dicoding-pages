@@ -1,5 +1,5 @@
 <div class="card p-4 card-user">
-    <div class="card-body pt-0 p-md-3">
+    <div class="card-body pt-0 p-lg-3">
         <div class="user d-flex flex-column justify-content-center mx-auto align-items-center">
             <div class="card-user-outer rounded-circle d-flex flex-row align-items-center justify-content-center border-color"
                 id="profileColor">
@@ -9,12 +9,12 @@
             </div>
             <h5 class="mt-3 text-center">{{$user['name']}}</h5>
             <p class="mt-2">{{$user['headline']}}</p>
-            <button class="mt-0 mt-md-2 btn border px-3 modal-profile" data-toggle="modal"
+            <button class="mt-0 mt-lg-2 btn border px-3 modal-profile" data-toggle="modal"
                 data-target="#modalProfile">Edit Profile</button>
         </div>
     </div>
     <div class="bio mt-1">
-        <p class="mt-0 mt-md-2 d-flex flex-row align-items-center">
+        <p class="mt-0 mt-lg-2 d-flex flex-row align-items-center">
 
             <svg class="mr-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -33,7 +33,7 @@
 
             <label class="m-0" style="font-size: 14px;">{{$user['xp']}} XP</label>
         </p>
-        <p class="mt-0 mt-md-2 d-flex flex-row align-items-center">
+        <p class="mt-0 mt-lg-2 d-flex flex-row align-items-center">
 
             <svg class="mr-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -47,7 +47,7 @@
             <label class="m-0" style="font-size: 14px;">Bergabung Sejak
                 {{\Carbon\Carbon::parse($user['created_at'])->format('Y')}}</label>
         </p>
-        <p class="mb-0 mt-md-2 d-flex flex-row align-items-center">
+        <p class="mb-0 mt-lg-2 d-flex flex-row align-items-center">
 
             <svg class="mr-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -77,8 +77,8 @@
                 <div class="row">
                     <div class="col">
 
-                        <div class="row mb-3 justify-content-between justify-content-md-start">
-                            <div class="col-4 col-md-3 pr-0">
+                        <div class="row mb-3 justify-content-between justify-content-lg-start">
+                            <div class="col-4 col-lg-3 pr-0">
                                 <img class="modal-user-picture rounded"
                                     src="https://d17ivq9b7rppb3.cloudfront.net/small/avatar/202003182244424af48515d2ad646d30975e35dc5f982f.png"
                                     alt="Avatar" class="rounded-circle" loading="lazy">
