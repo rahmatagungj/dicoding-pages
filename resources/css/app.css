@@ -230,7 +230,7 @@ button.modal-profile:hover {
     background-color: #ff5483 !important;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .float-top {
         max-height: 20rem;
     }
