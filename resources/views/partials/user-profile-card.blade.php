@@ -3,9 +3,9 @@
         <div class="user d-flex flex-column justify-content-center mx-auto align-items-center">
             <div class="card-user-outer rounded-circle d-flex flex-row align-items-center justify-content-center border-color"
                 id="profileColor">
-                <img class="card-user-picture rounded-circle"
-                    src="https://d17ivq9b7rppb3.cloudfront.net/small/avatar/202003182244424af48515d2ad646d30975e35dc5f982f.png"
-                    alt="Avatar" class="rounded-circle">
+                <img class="lozad card-user-picture rounded-circle"
+                    data-src="https://d17ivq9b7rppb3.cloudfront.net/small/avatar/202003182244424af48515d2ad646d30975e35dc5f982f.png"
+                    alt="{{$user['name']}}" class="rounded-circle" loading="lazy" data-placeholder-background="white"/>
             </div>
             <h5 class="mt-3 text-center">{{$user['name']}}</h5>
             <p class="mt-2">{{$user['headline']}}</p>
@@ -81,7 +81,7 @@
                             <div class="col-4 col-md-3 pr-0">
                                 <img class="modal-user-picture rounded"
                                     src="https://d17ivq9b7rppb3.cloudfront.net/small/avatar/202003182244424af48515d2ad646d30975e35dc5f982f.png"
-                                    alt="Avatar" class="rounded-circle">
+                                    alt="Avatar" class="rounded-circle" loading="lazy">
                             </div>
                             <div class="col">
                                 <button class="btn bg-gray-100 text-gray-700">Upload</button>
@@ -99,7 +99,7 @@
                                     <label for="color-1">
                                         <span>
                                             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
-                                                alt="Checked Icon" />
+                                                alt="Checked Icon" loading="lazy" />
                                         </span>
                                     </label>
                                 </div>
@@ -110,7 +110,7 @@
                                     <label for="color-2">
                                         <span>
                                             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
-                                                alt="Checked Icon" />
+                                                alt="Checked Icon" loading="lazy" />
                                         </span>
                                     </label>
                                 </div>
@@ -121,7 +121,7 @@
                                     <label for="color-3">
                                         <span>
                                             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
-                                                alt="Checked Icon" />
+                                                alt="Checked Icon" loading="lazy" />
                                         </span>
                                     </label>
                                 </div>
@@ -132,7 +132,7 @@
                                     <label for="color-4">
                                         <span>
                                             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
-                                                alt="Checked Icon" />
+                                                alt="Checked Icon" loading="lazy" />
                                         </span>
                                     </label>
                                 </div>
@@ -201,7 +201,6 @@
 
 
 <script>
-
     $(document).ready(function() {
         $('#profileColor').css('border-color', "{{$user['profileColor']}}");
 

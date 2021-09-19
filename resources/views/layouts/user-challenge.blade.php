@@ -4,7 +4,7 @@
         <div class="card card-course">
             <div class="card-body p-3">
                 <div class="header">
-                    <img class="rounded" src="/images/{{$challenge['image']}}" alt="pemrograman c" class="rounded-circle">
+                    <img class="lozad rounded" data-src="/images/{{$challenge['image']}}" alt="{{$challenge['title']}}" class="rounded-circle" loading="lazy" data-placeholder-background="white">
 
                     <h6 class="title-event text-gray-700 font-weight-bold mt-2 challenge-title">
                         {{$challenge['title']}}

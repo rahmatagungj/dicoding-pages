@@ -12,7 +12,7 @@
                         </div>
                     @endif
 
-                    <img class="rounded" src="/images/{{$course['image']}}" alt="pemrograman c" class="rounded-circle">
+                    <img class="lozad rounded-circle" data-src="/images/{{$course['image']}}" alt="{{$course['title']}}" loading="lazy" data-placeholder-background="white">
 
                     <h6 class="title-course ml-2 text-gray-700 font-weight-bold">
                         {{$course['title']}}
