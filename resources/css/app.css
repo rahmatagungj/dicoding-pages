@@ -9,9 +9,11 @@ main {
 }
 
 .jumbotron-bg {
-    background-image: url("/images/jumbotron-bg.png");
-    background-size: cover;
-    background-position: center;
+    background: #044362;
+    background-image: url("/images/accent.svg");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: right;
     min-height: 364px;
 }
 
@@ -213,7 +215,7 @@ button.modal-profile:hover {
     }
 
     .inner-nav::-webkit-scrollbar-thumb {
-        background: #3478f3;
+        background: #0B96A6;
         border-radius: 0;
     }
     .inner-nav::-webkit-scrollbar-track {
@@ -248,9 +250,6 @@ button.modal-profile:hover {
     .modal-user-picture {
         width: 100%;
         height: auto;
-    }
-    .jumbotron-bg {
-        background-position: right;
     }
 }
 
