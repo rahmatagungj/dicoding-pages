@@ -191,7 +191,7 @@ button.modal-profile:hover {
     background-color: #0c9bab;
 }
 .profile-color input[type="radio"]#color-4 + label span {
-    background-color: #1ABC9C;
+    background-color: #1abc9c;
 }
 .profile-color input[type="radio"]:checked + label span img {
     opacity: 1;
@@ -199,6 +199,34 @@ button.modal-profile:hover {
 
 .modal {
     padding-right: 0px !important;
+}
+
+.ribbon-wrapper {
+    width: 85px;
+    height: 85px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ribbon {
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 15px;
+    text-align: center;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 40%);
+    transform: rotate(-45deg);
+    position: relative;
+    padding: 4px 0;
+    left: -35px;
+    top: 12px;
+    width: 120px;
+    height: 23px;
+    -webkit-box-shadow: 0 0 2px rgb(0 0 0 / 30%);
+    background-color: #ff5483 !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -215,7 +243,7 @@ button.modal-profile:hover {
     }
 
     .inner-nav::-webkit-scrollbar-thumb {
-        background: #0B96A6;
+        background: #0b96a6;
         border-radius: 0;
     }
     .inner-nav::-webkit-scrollbar-track {
