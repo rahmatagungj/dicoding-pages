@@ -140,7 +140,8 @@ button.modal-profile:hover {
 }
 
 .card-user-outer {
-    border: 4px solid #0c9bab;
+    border: 4px solid transparent;
+    transition: border 0.3s ease-in-out;
     padding: 0.2rem;
 }
 
