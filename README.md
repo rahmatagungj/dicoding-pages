@@ -1,4 +1,4 @@
-# Dicoding Profile Page 
+# Dicoding Pages
 
 This project is used as a requirement for Dicoding Product Engineer Technical Exercise.
 
